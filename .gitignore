@@ -1,0 +1,34 @@
+# common
+*.bak
+*.orig
+
+# sublime
+*.sublime-workspace
+
+# vim
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# SASS
+.sass-cache
+
+# Nanoc
+tmp
+/output
+/gh-pages
+*.log
+.bundle
+.rvmrc
+.idea/
+.history/

@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+
+# A few helpful tips about the Rules file:
+#
+# * The string given to #compile and #route are matching patterns for
+#   identifiers--not for paths. Therefore, you can’t match on extension.
+#
+# * The order of rules is important: for each item, only the first matching
+#   rule is applied.
+#
+# * Item identifiers start and end with a slash (e.g. “/about/” for the file
+#   “content/about.html”). To select all children, grandchildren, … of an
+#   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
+#   because “*” matches zero or more characters.
+
+ignore '/example.html'
+ignore '/archives/*.html'
+ignore '/static/css/**/*.scss'
+
+compile '/static/css/*.sass' do
+  filter :sass, filename: item.raw_filename, load_paths: [ '.', '/static/assets/css/' ], cache: false
+end
+
+compile '/*.html' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    filter :erb
+    layout '/default.html.erb'
+  end
+end
+
+compile '/static/**/*' do
+end
+
+route '/static/css/*.sass' do
+  # Compile SASS to CSS
+  item.identifier.to_s.gsub('.sass', '.css').sub(/\A\/static/, '')
+end
+
+route '/*.html' do
+  if item.binary?
+    item.identifier.chop
+  elsif item == latest
+    '/index.html'
+  else
+    "/edition-#{@item[:edition]}.html"
+  end
+end
+
+route '/static/**/*' do
+  item.identifier.to_s.sub(/\A\/static/, '')
+end
+
+layout '/*', :erb
