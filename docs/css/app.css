@@ -60,17 +60,19 @@ html {
       display: flex;
       flex: 1 1 50%; }
       .header .nav-bar .logo-section .logo {
-        background: url("../img/hacktoberfest_tw_logo.png") no-repeat;
-        background-size: 140px;
-        height: 65px;
-        width: 160px;
+        background: url("../img/Hacktoberfest_19_Events.svg") no-repeat;
+        background-size: 240px;
+        height: 80px;
+        width: 240px;
         margin-left: 5px; }
     .header .nav-bar .menu {
       display: flex;
       align-items: center;
       flex: 1 1 40%; }
       .header .nav-bar .menu-item {
-        flex: 1 1 25%; }
+        flex: 1 1 25%;
+        font-size: 17px;
+        font-weight: 600; }
       .header .nav-bar .menu .active a {
         border-bottom: 5px solid #ef5ba1;
         padding-bottom: 5px; }
@@ -87,7 +89,7 @@ html {
   padding-top: 100px; }
   .intro .banner {
     flex: 1 1 60%;
-    background: url("../img/intro_background.jpg") center center no-repeat;
+    background: url("../img/Hacktoberfest_19_Events_Banner.png") center center no-repeat;
     background-size: 100%; }
     .intro .banner-overlay {
       margin: auto;
@@ -274,7 +276,7 @@ html {
         background-size: 50px;
         background-position: 30px 20px; }
   .location .location-heading {
-    background-color: #dfdfdf;
+    background-color: #fff;
     height: 90px;
     line-height: 90px;
     text-align: center; }
