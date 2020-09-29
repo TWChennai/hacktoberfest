@@ -1,56 +1,36 @@
-.header {
-	background: $white-90-percent-opacity;
-	position: fixed;
-	height: 100px;
-	width: 100%;
-	z-index: 999;
-	padding: 0;
-	top: 0;
-	left: 0;
-	right: 0;
-	a {
-		text-decoration: none;
-		color: $pink;
-		-webkit-transition: left 0.5s ease;
-		-moz-transition: left 0.5s ease;
-		transition: left 0.5s ease;
+#hacktoberfest nav {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 36px;
+}
+
+nav.navbar-light .navbar-nav .nav-link {
+	color: #221d1f;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#hacktoberfest nav a.nav-link:hover{
+	color: #ef5ba1;
+}
+
+@media (min-width: 992px) {
+	nav.navbar{
+		padding-right: 200px;
+		padding-left: 100px;
 	}
-	.nav-bar {
-		width: 960px;
-		display: flex;
-		position: relative;
-		top: 15px;
-		bottom: 15px;
-		margin: auto;
-		.logo-section {
-			display: flex;
-			flex: 1 1 50%;
-			.logo {
-				background: $hacktoberfest-tw-logo no-repeat;
-				background-size: 240px;
-				height: 80px;
-				width: 240px;
-				margin-left: 5px;
-			}
-		}
-		.menu {
-			display: flex;
-			align-items: center;
-			flex: 1 1 40%;
-			&-item {
-				flex: 1 1 25%;
-				font-size: 17px;
-				font-weight: 600;
-			}
-			.active {
-				a {
-					border-bottom: 5px solid $pink;
-					padding-bottom: 5px;
-				}
-			}
-		}
+
+	nav.navbar-light .navbar-nav .nav-link {
+		border-bottom: 1px solid #fff;
+		box-shadow: inset 0 -4px 0 -1px #fff;
+	}
+
+	#hacktoberfest nav a.nav-link:hover {
+		border-bottom: 1px solid #ef5ba1;
+		box-shadow: inset 0 -4px 0 -1px #ef5ba1;
 	}
 }
-.shadow {
-	box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+
+.h-image {
+	width: 100%;
 }

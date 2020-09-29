@@ -1,49 +1,71 @@
-html {
-	width: 100%;
-	height: 100%;
-	min-width: 924px;
-	overflow: auto;
-	font-family: 'OpenSans', sans-serif;
-	@media #{$mobile} {
-		min-width: 300px;
+body {
+	font-family: "Open Sans","Microsoft YaHei","Hiragino Sans GB","Hiragino Sans GB W3","微软雅黑","Helvetica Neue",Arial,sans-serif!important;
+	font-weight: 400;
+	color: #221d1f;
+}
+
+.h-logo {
+	width: 200px;
+}
+
+
+p {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 32px;
+	letter-spacing: 0;
+}
+
+h1 {
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 40px;
+	letter-spacing: -1.6px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 32px;
+	letter-spacing: 0;
+	margin-bottom: 32px;
+	text-align: center;
+}
+
+h3 {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 32px;
+	letter-spacing: -.8px;
+	margin-top: 16px;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	h1{
+		font-size: 40px;
+		line-height: 50px;
+		letter-spacing: -2.2px;
 	}
 
-	body {
-		position: relative;
-		margin: auto;
-		min-width: 924px;
-		@media #{$mobile} {
-			min-width: 300px;
-		}
-
-		a {
-			color: $pink;
-			text-decoration: none;
-		}
+	h2 {
+		font-size: 32px;
+		line-height: 40px;
+		letter-spacing: -.8px;
 	}
+}
 
-	.read-more {
-		color: $pink;
-	}
 
-	.read-more::after {
-		content: 'Show More';
-		cursor: pointer;
-		text-decoration: underline;
-		font-size: 18px;
-		font-weight: 700;
-	}
 
-	.toggle:checked ~ label::after {
-		content: 'Show Less';
-	}
 
-	.toggle {
-		display: none;
-		visibility: hidden;
-	}
 
-	.link {
-		text-decoration: underline;
-	}
+section {
+	padding: 48px 10%;
+}
+
+.about {
+	background-color: #F4F5F8;
 }

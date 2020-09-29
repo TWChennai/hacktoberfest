@@ -4,12 +4,16 @@ module HacktoberfestTwHelper
     Time.parse item[:start]
   end
 
-  def archives    
+  def all_editions
     @items.select do |event|
       !!event[:edition]
     end.sort_by do |event|
       -event[:edition]
     end
+  end
+
+  def archives
+    all_editions[1..all_editions.length]
   end
 
   def groupYearMonths
@@ -25,7 +29,7 @@ module HacktoberfestTwHelper
   end
 
   def latest
-    @@first ||= archives.first
+    @@first ||= all_editions.first
   end
 
   def json_of_event(item)
