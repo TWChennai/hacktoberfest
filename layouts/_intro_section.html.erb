@@ -2,7 +2,14 @@
 <img class="h-image d-md-none d-block" src="img/<%= @item[:banner_mobile] %>" alt="<%= @item[:banner_mobile] %>"/>
 <div class="text-center" id="participate">
   <h1>ThoughtWorks Chennai</h1>
-  <h2 id="edition-name">Hacktoberfest <%= @item[:edition] %><sup><%= @item[:edition].ordinal %></sup> Edition</h2>
+  <h2 id="edition-name">Hacktoberfest
+    <% if @item[:edition_name] %>
+        <%= @item[:edition_name] %>
+    <% else %>
+        <%= @item[:edition] %><sup><%= @item[:edition].ordinal %></sup>
+    <% end %>
+    Edition
+  </h2>
   <h3><%= @item[:start].to_date.strftime("%e %B %Y") %></h3>
   <% if item[:participate] %>
     <a href="<%= @item[:participate] %>" class="participate" target="_blank" rel="nofollow" data-event-label="Participate">

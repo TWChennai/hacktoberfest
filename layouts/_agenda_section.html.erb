@@ -1,5 +1,18 @@
 <section class="agenda" id="agenda">
   <h2>Agenda</h2>
+  <div class="prerequisite mb-4">
+    <strong>Prerequisite for event</strong>
+    <p>
+      <ul>
+        <% if @item[:prerequisite] %>
+      <%= @item[:prerequisite] %>
+    <% else %>
+      <li>Bring laptop</li>
+    <% end %>
+      </ul>
+    </p>
+
+  </div>
   <table class="table">
     <tbody>
     <% @item[:agenda] && @item[:agenda].each_with_index do |agenda, i| %>
@@ -68,4 +81,9 @@
     <% end %>
     </tbody>
   </table>
+  <% if @item[:chat_room_url] %>
+    <div class="chat-room mt-4">
+      <strong>Chat Room :</strong> <a href="<%= @item[:chat_room_url] %>" target="_blank"><%= @item[:chat_room_name] %></a>
+    </div>
+  <% end %>
 </section>
