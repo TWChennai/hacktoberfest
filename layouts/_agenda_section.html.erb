@@ -86,4 +86,10 @@
       <strong>Chat Room :</strong> <a href="<%= @item[:chat_room_url] %>" target="_blank"><%= @item[:chat_room_name] %></a>
     </div>
   <% end %>
+  <% if @item[:pr_submission_url] and @item[:pr_leaderboard_url] %>
+    <div class="pr-submission mt-4">
+      <strong>PR Leaderboard</strong>
+      <p>Submit your PRs <a href="<%= @item[:pr_submission_url] %>" target="_blank">here</a> to get featured in our <a href="<%= @item[:pr_leaderboard_url] %>" target="_blank">leaderboard</a>.</p>
+    </div>
+  <% end %>
 </section>
